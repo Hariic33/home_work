@@ -11,12 +11,13 @@ public class MultiplyByItself {
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
 
-        /*
-        todo - complete loop to multiply i with itself n times, it is NOT allowed to use Math.pow()
-        for (.......) {
-          System.out.println(........);
-        }
-        */
-    }
+        if (n < 0)
+            n *= -1;
 
+        long result = 1;
+        for (i = 1; i <= n; i++) {
+            result *= n;
+        }
+        System.out.println(n + " multiplied with itself " + n + " times is: " + result);
+    }
 }
