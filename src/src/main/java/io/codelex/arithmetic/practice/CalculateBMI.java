@@ -15,6 +15,7 @@ public class CalculateBMI {
         double BMI = weight * 703 / Math.pow(height, 2);
 
         if (BMI > 18.5 && BMI < 25) {
+
             System.out.println("The person's body mass index (" + String.format("%.1f", BMI) + ") is considered optimal.");
         } else if (BMI < 18.5) {
             System.out.println("The person's body mass index (" + String.format("%.1f", BMI) + ") is considered underweight.");
