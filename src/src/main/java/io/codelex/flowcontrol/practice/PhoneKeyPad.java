@@ -18,19 +18,19 @@ public class PhoneKeyPad {
             if (key >= 'a' && key <= 'z') {
                 if (key == 'a' || key == 'b' || key == 'c') {
                     System.out.print(2);
-                } else if (key == 'd' || key == 'e' || key == 'f'){
+                } else if (key == 'd' || key == 'e' || key == 'f') {
                     System.out.print(3);
-                } else if (key == 'g' || key == 'h' || key == 'i'){
+                } else if (key == 'g' || key == 'h' || key == 'i') {
                     System.out.print(4);
-                } else if (key == 'j' || key == 'k' || key == 'l'){
+                } else if (key == 'j' || key == 'k' || key == 'l') {
                     System.out.print(5);
-                } else if (key == 'm' || key == 'n' || key == 'o'){
+                } else if (key == 'm' || key == 'n' || key == 'o') {
                     System.out.print(6);
-                } else if (key == 'p' || key == 'q' || key == 'r' || key == 's'){
+                } else if (key == 'p' || key == 'q' || key == 'r' || key == 's') {
                     System.out.print(7);
-                } else if (key == 't' || key == 'u' || key == 'v'){
+                } else if (key == 't' || key == 'u' || key == 'v') {
                     System.out.print(8);
-                } else if (key == 'w' || key == 'x' || key == 'y' || key == 'z'){
+                } else if (key == 'w' || key == 'x' || key == 'y' || key == 'z') {
                     System.out.print(9);
                 }
             } else {
@@ -48,24 +48,15 @@ public class PhoneKeyPad {
             char inChar = input.charAt(i);
 
             switch (inChar) {
-                case 'a': case 'b': case 'c':
-                    System.out.print(2); break;
-                case 'd': case 'e': case 'f':
-                    System.out.print(3); break;
-                case 'g': case 'h': case 'i':
-                    System.out.print(4); break;
-                case 'j': case 'k': case 'l':
-                    System.out.print(5); break;
-                case 'm': case 'n': case 'o':
-                    System.out.print(6); break;
-                case 'p': case 'q': case 'r': case 's':
-                    System.out.print(7); break;
-                case 't': case 'u': case 'v':
-                    System.out.print(8); break;
-                case 'w': case 'x': case 'y': case 'z':
-                    System.out.print(9); break;
-                default:
-                    System.out.print(inChar); break;
+                case 'a', 'b', 'c' -> System.out.print(2);
+                case 'd', 'e', 'f' -> System.out.print(3);
+                case 'g', 'h', 'i' -> System.out.print(4);
+                case 'j', 'k', 'l' -> System.out.print(5);
+                case 'm', 'n', 'o' -> System.out.print(6);
+                case 'p', 'q', 'r', 's' -> System.out.print(7);
+                case 't', 'u', 'v' -> System.out.print(8);
+                case 'w', 'x', 'y', 'z' -> System.out.print(9);
+                default -> System.out.print(inChar);
             }
         }
     }

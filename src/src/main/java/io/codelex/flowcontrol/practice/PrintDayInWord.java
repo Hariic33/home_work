@@ -38,34 +38,17 @@ public class PrintDayInWord {
         Scanner in = new Scanner(System.in);
         System.out.print("Today is: ");
         int dayNumber = in.nextInt();
-        String todayIs;
+        String todayIs = switch (dayNumber) {
+            case 0 -> "Sunday";
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            default -> "Not a valid day";
+        };
 
-        switch (dayNumber) {
-            case 0:
-                todayIs = "Sunday";
-                break;
-            case 1:
-                todayIs = "Monday";
-                break;
-            case 2:
-                todayIs = "Tuesday";
-                break;
-            case 3:
-                todayIs = "Wednesday";
-                break;
-            case 4:
-                todayIs = "Thursday";
-                break;
-            case 5:
-                todayIs = "Friday";
-                break;
-            case 6:
-                todayIs = "Saturday";
-                break;
-            default:
-                todayIs = "Not a valid day";
-                break;
-        }
         System.out.println("Day: " + todayIs);
     }
 }

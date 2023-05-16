@@ -14,16 +14,12 @@ public class RollTwoDice {
             System.out.println("Please input an integer between 2 and 12");
         } else {
             System.out.println("Desired sum: " + desiredSum);
-            boolean rollAgain = true;
-            while (rollAgain) {
+            int total = 0;
+            while (desiredSum != total) {
                 int firstDiceRoll = rand.nextInt(6) + 1;
                 int secondDiceRoll = rand.nextInt(6) + 1;
-                int total = firstDiceRoll + secondDiceRoll;
+                total = firstDiceRoll + secondDiceRoll;
                 System.out.println(firstDiceRoll + " and " + secondDiceRoll + " = " + total);
-
-                if (desiredSum == total) {
-                    rollAgain = false;
-                }
             }
         }
     }
