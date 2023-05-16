@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
-    private static char[][] board = new char[3][3];
+    private static final char[][] board = new char[3][3];
+    private static char currentPlayer = 'X';
+    private static boolean gameOver = false;
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
@@ -12,10 +14,30 @@ public class TicTacToe {
         initBoard();
         displayBoard();
 
+        while (!gameOver) {
+            System.out.print("'" + currentPlayer + "', choose your location (row, column): ");
+            int row = keyboard.nextInt();
+            int column = keyboard.nextInt();
+
+            if (isValidMove(row, column)) {
+                makeMove(row, column);
+                displayBoard();
+                if (checkWin()) {
+                    System.out.println("Player '" + currentPlayer + "' wins!");
+                    gameOver = true;
+                } else if (isBoardFull()) {
+                    System.out.println("The game is a tie.");
+                    gameOver = true;
+                } else {
+                    currentPlayer = currentPlayer == 'X' ? 'O' : 'X';
+                }
+            } else {
+                System.out.println("Invalid move. Try again.");
+            }
+        }
     }
 
     public static void initBoard() {
-        // fills up the board with blanks
         for (int r = 0; r < 3; r++)
             for (int c = 0; c < 3; c++)
                 board[r][c] = ' ';
@@ -28,5 +50,42 @@ public class TicTacToe {
         System.out.println("    --+-+--");
         System.out.println("  2  " + board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
         System.out.println("     0 1 2 ");
+    }
+
+    public static boolean isValidMove(int row, int column) {
+        if (row < 0 || row >= 3 || column < 0 || column >= 3) {
+            return false;
+        }
+        return board[row][column] == ' ';
+    }
+
+    public static void makeMove(int row, int column) {
+        board[row][column] = currentPlayer;
+    }
+
+    public static boolean checkWin() {
+        for (int r = 0; r < 3; r++) {
+            if (board[r][0] == currentPlayer && board[r][1] == currentPlayer && board[r][2] == currentPlayer) {
+                return true;
+            }
+        }
+        for (int c = 0; c < 3; c++) {
+            if (board[0][c] == currentPlayer && board[1][c] == currentPlayer && board[2][c] == currentPlayer) {
+                return true;
+            }
+        }
+        return (board[0][0] == currentPlayer && board[1][1] == currentPlayer && board[2][2] == currentPlayer) ||
+                (board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer);
+    }
+
+    public static boolean isBoardFull() {
+        for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
+                if (board[r][c] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
