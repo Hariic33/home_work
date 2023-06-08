@@ -1,7 +1,9 @@
 package io.codelex.polymorphism.practice.exercise1;
 
 interface Car {
-    void startEngine();
+    default void startEngine() {
+        System.out.println("Rrrrrrr.....");
+    }
 
     void speedUp();
 

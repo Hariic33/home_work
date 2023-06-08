@@ -20,10 +20,6 @@ public class Lexus implements Car, Boost {
         System.out.println("Nitrous Oxide Engine activated!");
     }
 
-    public void startEngine() {
-        System.out.println("Rrrrrrr.....");
-    }
-
     @Override
     public String toString() {
         return "Lexus";

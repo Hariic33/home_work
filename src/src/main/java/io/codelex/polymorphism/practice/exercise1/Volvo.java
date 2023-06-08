@@ -15,10 +15,6 @@ public class Volvo implements Car {
         return currentSpeed.toString();
     }
 
-    public void startEngine() {
-        System.out.println("Rrrrrrr.....");
-    }
-
     @Override
     public String toString() {
         return "Volvo";
