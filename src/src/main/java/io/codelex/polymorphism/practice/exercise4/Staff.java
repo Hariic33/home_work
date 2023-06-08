@@ -7,8 +7,8 @@ public class Staff {
     // Sets up the list of staff members.
     //-----------------------------------------------------------------
     public Staff() {
-        staffList = new StaffMember[6];
-        staffList[0] = new Executive("Sam", "123 Main Line",
+        staffList = new StaffMember[8];
+        staffList[0] = new Executive("Sam", "123 FlightTrip Line",
                 "555-0469", "123-45-6789", 2423.07);
         staffList[1] = new Employee("Carla", "456 Off Line",
                 "555-0101", "987-65-4321", 1246.15);
@@ -20,8 +20,16 @@ public class Staff {
                 "555-8374");
         staffList[5] = new Volunteer("Cliff", "321 Duds Lane",
                 "555-7282");
+        staffList[6] = new Commission("Barry", "567 Comedy Avenue",
+                "555-1234", "020-30-4010", 6.25, .20);
+        staffList[7] = new Commission("Ron", "111 Swanson Street",
+                "555-1111", "444-33-2222", 9.75, .15);
         ((Executive) staffList[0]).awardBonus(500.00);
         ((Hourly) staffList[3]).addHours(40);
+        ((Hourly) staffList[6]).addHours(35);
+        ((Commission) staffList[6]).addSales(400.0);
+        ((Hourly) staffList[7]).addHours(40);
+        ((Commission) staffList[7]).addSales(950.0);
     }
 
     //-----------------------------------------------------------------
