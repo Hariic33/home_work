@@ -1,4 +1,4 @@
-package io.codelexTest.exercise5;
+package io.codelexTest.javaAdvancedTest.exercise5;
 
 import java.util.Arrays;
 import java.util.List;

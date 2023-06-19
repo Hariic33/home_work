@@ -1,4 +1,4 @@
-package io.codelexTest.exercise1;
+package io.codelexTest.javaAdvancedTest.exercise1;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Main {
         try {
             creditCard.takeMoney(550);
             creditCard.takeMoney(900);
-        } catch (Card.NotEnoughFundsException e) {
+        } catch (NotEnoughFundsException e) {
             System.out.println(e.getMessage());
         }
 
@@ -17,7 +17,7 @@ public class Main {
             debitCard.addMoney(1050);
             debitCard.takeMoney(5000);
             debitCard.takeMoney(6000);
-        } catch (Card.NotEnoughFundsException e) {
+        } catch (NotEnoughFundsException e) {
             System.out.println(e.getMessage());
         }
     }

@@ -1,4 +1,4 @@
-package io.codelexTest.exercise3;
+package io.codelexTest.javaAdvancedTest.exercise3;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

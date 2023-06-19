@@ -1,4 +1,4 @@
-package io.codelexTest.exercise4;
+package io.codelexTest.javaAdvancedTest.exercise4;
 
 import java.io.IOException;
 import java.nio.file.Files;

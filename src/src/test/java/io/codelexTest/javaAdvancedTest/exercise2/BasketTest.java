@@ -1,4 +1,4 @@
-package io.codelexTest.exercise2;
+package io.codelexTest.javaAdvancedTest.exercise2;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,7 @@ public class BasketTest {
         try {
             appleBasket.addToBasket(new Apple());
             fail("Expected BasketFullException to be thrown");
-        } catch (Basket.BasketFullException e) {
+        } catch (BasketFullException e) {
             assertEquals("Basket is already full", e.getMessage());
         }
     }
@@ -29,7 +29,7 @@ public class BasketTest {
         try {
             mushroomBasket.removeFromBasket();
             fail("BasketEmptyException thrown");
-        } catch (Basket.BasketEmptyException e) {
+        } catch (BasketEmptyException e) {
             assertEquals("Basket is already empty", e.getMessage());
         }
 
@@ -44,7 +44,7 @@ public class BasketTest {
         try {
             mushroomBasket.removeFromBasket();
             fail("BasketEmptyException thrown");
-        } catch (Basket.BasketEmptyException e) {
+        } catch (BasketEmptyException e) {
             assertEquals("Basket is already empty", e.getMessage());
         }
     }
