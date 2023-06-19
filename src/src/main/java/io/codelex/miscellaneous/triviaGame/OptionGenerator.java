@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import static Melnraksti.triviaGame.TriviaGame.MAX_OPTIONS;
+import static io.codelex.miscellaneous.triviaGame.TriviaGame.MAX_OPTIONS;
 
 class OptionGenerator {
     public static List<Integer> generateOptions(Random random, int randomNumber) {
