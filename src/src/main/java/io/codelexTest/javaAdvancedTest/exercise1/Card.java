@@ -1,23 +1,23 @@
-package io.codelexTest.exercise1;
+package io.codelexTest.javaAdvancedTest.exercise1;
 
 public abstract class Card {
     private String number;
     private String owner;
     private String ccvCode;
-    private double balance;
+    private int balance;
 
-    public Card(String number, String owner, String ccvCode, double balance) {
+    public Card(String number, String owner, String ccvCode, int balance) {
         this.number = number;
         setOwner(owner);
         setCcvCode(ccvCode);
         this.balance = balance;
     }
 
-    public void addMoney(double amount) {
+    public void addMoney(int amount) {
         balance += amount;
     }
 
-    public void takeMoney(double amount) throws NotEnoughFundsException {
+    public void takeMoney(int amount) throws NotEnoughFundsException {
         if (balance < amount) {
             throw new NotEnoughFundsException("Warning: Low funds");
         }
@@ -58,17 +58,11 @@ public abstract class Card {
         this.ccvCode = ccvCode;
     }
 
-    public double getBalance() {
+    public int getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
-    }
-
-    static class NotEnoughFundsException extends Exception {
-        public NotEnoughFundsException(String message) {
-            super(message);
-        }
     }
 }

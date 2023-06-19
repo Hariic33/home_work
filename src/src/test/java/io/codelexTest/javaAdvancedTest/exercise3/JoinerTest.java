@@ -1,4 +1,4 @@
-package io.codelexTest.exercise3;
+package io.codelexTest.javaAdvancedTest.exercise3;
 
 import org.junit.jupiter.api.Test;
 
