@@ -1,9 +1,17 @@
 package io.codelex.exceptions.practice;
 
+import java.util.Scanner;
+
 public class Exercise4 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         try {
-            double d = getInput(args[0]);
+            System.out.print("Input number: ");
+            double d = getInput(scanner.nextLine());
+            if (d <= 0) {
+                throw new NonPositiveNumberException("Result will be imaginary number.");
+            }
             double root = Math.sqrt(d);
             System.out.println(
                     "The square root of " + d + " is " + root);
@@ -11,16 +19,18 @@ public class Exercise4 {
             System.out.println("Be sure to enter a number.");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Enter number as first parameter.");
-        } /* todo -
-         catch (NonPositiveNumberException e) {
-        System.out.println("Result will be imaginary number.");
+        } catch (NonPositiveNumberException e) {
+            System.out.println("Result will be imaginary number.");
         }
-        */
     }
 
     static double getInput(String s) {
-        double d = new Double(s).doubleValue();
-        // Throw an NonPositiveNumberException if d is less than 0
-        return d;
+        return Double.parseDouble(s);
+    }
+
+    static class NonPositiveNumberException extends Exception {
+        public NonPositiveNumberException(String message) {
+            super(message);
+        }
     }
 }
